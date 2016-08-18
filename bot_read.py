@@ -5,7 +5,10 @@
 import praw
 import re
 import os
+from flask import Flask
 #from config_bot import * no need for heroku version
+
+app = Flask(__name__) 
 
 r = praw.Reddit(user_agent='bot 0.1 by /u/poupipoupipoupipou')
 r.login(os.environ['REDDIT_USERNAME'],  os.environ['REDDIT_PASS'])
@@ -65,5 +68,6 @@ def main():
 
 
 if __name__ == '__main__':
-	port = int(os.environ.get('PORT', 5000))
-	main.run(host='0.0.0.0', port=port)
+	from os import environ
+    app.run(debug=False, port=environ.get("PORT", 5000))
+	main()
