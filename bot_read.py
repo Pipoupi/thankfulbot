@@ -15,12 +15,20 @@ s = ''
 authorList = []
 first = True
 
-with open("posts_replied_to.txt", "r") as f:
-        posts_replied_to = f.read()
-        posts_replied_to = posts_replied_to.split("\n")
-        posts_replied_to = filter(None, posts_replied_to)
+class SavedSet(set):
+	_filename = "posts_replied_to.txt"
 
-def bot_action(c, verbose=True, respond=True):
+	def load_from_file(self):
+		with open(_filename, "r") as f:
+			return set(f.read().split())
+
+	def add(self, what):
+		with open(_filename, "a") as f:
+			f.write(what + "\n")
+		return super(PostsDone, self).add(what)
+
+
+def bot_action(c, posts_replied_to, verbose=True, respond=True):
 	global first
 	global s
 	global authorList
@@ -44,13 +52,16 @@ def bot_action(c, verbose=True, respond=True):
 			response += ' for your kind answer !'
 		print(response)
 		c.reply(response)
-		posts_replied_to.append(submission.id)
+		posts_replied_to.add(submission.id)
 
-		with open("posts_replied_to.txt", "w") as f:
-			for post_id in posts_replied_to:
-				f.write(post_id + "\n")
 
-for c in praw.helpers.comment_stream(r, 'all'):
-	if re.search(key_word, c.body, re.IGNORECASE):
-		print(vars(c))
-		bot_action(c)
+def main():
+	for c in praw.helpers.comment_stream(r, 'all'):
+		posts = SavedSet()
+		if re.search(key_word, c.body, re.IGNORECASE):
+			print(vars(c))
+			bot_action(c, posts)
+
+
+if __name__ == '__main__':
+	main()
