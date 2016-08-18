@@ -10,6 +10,8 @@ import os
 from flask import Flask
 app = Flask(__name__)
 
+port = int(os.environ.get("PORT", 5000))
+app.run(debug=True, host='0.0.0.0', port=port)
 
 r = praw.Reddit(user_agent='bot 0.1 by /u/poupipoupipoupipou')
 r.login(os.environ['REDDIT_USERNAME'],  os.environ['REDDIT_PASS'])
@@ -69,5 +71,4 @@ def main():
 
 
 if __name__ == '__main__':
-	port = int(os.environ.get('PORT', 5000))
-	app.run(host='0.0.0.0', port=port)
+	main()
