@@ -46,7 +46,7 @@ def bot_action(c, verbose=True, respond=True):
 			response += ' for your kind answer !'
 		print(response)
 		c.reply(response)
-		posts_replied_to.add(submission.id)
+		posts_replied_to.append(submission.id)
 		with open("posts_replied_to.txt", "w") as f:
 			for post_id in posts_replied_to:
 				f.write(post_id + "\n")
