@@ -18,9 +18,11 @@ first = True
 class SavedSet(set):
 	_filename = "posts_replied_to.txt"
 
-	def load_from_file(self):
+	@classmethod
+	def load_from_file(cls):
 		with open(_filename, "r") as f:
-			return set(f.read().split())
+			records = f.read().split()
+			return cls(records)
 
 	def add(self, what):
 		with open(_filename, "a") as f:
@@ -57,7 +59,7 @@ def bot_action(c, posts_replied_to, verbose=True, respond=True):
 
 def main():
 	for c in praw.helpers.comment_stream(r, 'all'):
-		posts = SavedSet()
+		posts = SavedSet.load_from_file()
 		if re.search(key_word, c.body, re.IGNORECASE):
 			print(vars(c))
 			bot_action(c, posts)
