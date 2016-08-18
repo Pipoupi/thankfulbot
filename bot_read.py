@@ -56,7 +56,7 @@ def main():
 	for c in praw.helpers.comment_stream(r, 'all'):
 		if re.search(key_word, c.body, re.IGNORECASE):
 			print(vars(c))
-			bot_action(c, posts)
+			bot_action(c)
 
 
 if __name__ == '__main__':
