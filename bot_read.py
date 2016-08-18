@@ -22,7 +22,7 @@ with open("posts_replied_to.txt", "r") as f:
 	posts_replied_to = filter(None, posts_replied_to)
 
 
-def bot_action(c, posts_replied_to, verbose=True, respond=True):
+def bot_action(c, verbose=True, respond=True):
 	global first
 	global s
 	global authorList
