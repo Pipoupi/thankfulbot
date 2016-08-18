@@ -1,0 +1,101 @@
+2016-08-18T14:14:45.953109+00:00 heroku[api]: Release v33 created by villermois.soline@gmail.com
+2016-08-18T14:14:45.953048+00:00 heroku[api]: Deploy 070e677 by villermois.soline@gmail.com
+2016-08-18T14:14:48.217212+00:00 heroku[web.1]: Restarting
+2016-08-18T14:14:48.217907+00:00 heroku[web.1]: State changed from up to starting
+2016-08-18T14:14:50.702551+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2016-08-18T14:14:50.912650+00:00 heroku[web.1]: Starting process with command `python bot_read.py`
+2016-08-18T14:14:51.263781+00:00 heroku[web.1]: Process exited with status 0
+2016-08-18T14:14:52.439655+00:00 app[web.1]:   File "bot_read.py", line 74
+2016-08-18T14:14:52.439672+00:00 app[web.1]:     app.run(host='0.0.0.0', port=port)
+2016-08-18T14:14:52.439679+00:00 app[web.1]: IndentationError: unindent does not match any outer indentation level
+2016-08-18T14:14:52.521251+00:00 heroku[web.1]: State changed from crashed to starting
+2016-08-18T14:14:52.439678+00:00 app[web.1]:                                      ^
+2016-08-18T14:14:52.506102+00:00 heroku[web.1]: Process exited with status 1
+2016-08-18T14:14:52.520713+00:00 heroku[web.1]: State changed from starting to crashed
+2016-08-18T14:14:55.083684+00:00 heroku[web.1]: Starting process with command `python bot_read.py`
+2016-08-18T14:14:56.938191+00:00 heroku[web.1]: Process exited with status 1
+2016-08-18T14:14:56.876796+00:00 app[web.1]:                                      ^
+2016-08-18T14:14:56.876791+00:00 app[web.1]:     app.run(host='0.0.0.0', port=port)
+2016-08-18T14:14:56.876797+00:00 app[web.1]: IndentationError: unindent does not match any outer indentation level
+2016-08-18T14:14:56.963171+00:00 heroku[web.1]: State changed from starting to crashed
+2016-08-18T14:14:56.876770+00:00 app[web.1]:   File "bot_read.py", line 74
+2016-08-18T14:16:12.029034+00:00 heroku[api]: Deploy 041ffd5 by villermois.soline@gmail.com
+2016-08-18T14:16:12.029131+00:00 heroku[api]: Release v34 created by villermois.soline@gmail.com
+2016-08-18T14:16:12.257057+00:00 heroku[slug-compiler]: Slug compilation started
+2016-08-18T14:16:12.257062+00:00 heroku[slug-compiler]: Slug compilation finished
+2016-08-18T14:16:12.480768+00:00 heroku[web.1]: State changed from crashed to starting
+2016-08-18T14:16:15.455679+00:00 heroku[web.1]: Starting process with command `python bot_read.py`
+2016-08-18T14:16:18.233421+00:00 heroku[web.1]: State changed from starting to crashed
+2016-08-18T14:16:18.204303+00:00 heroku[web.1]: Process exited with status 1
+2016-08-18T14:16:18.125060+00:00 app[web.1]:     app.run(debug=True, host='0.0.0.0', port=port)
+2016-08-18T14:16:18.125061+00:00 app[web.1]: NameError: name 'app' is not defined
+2016-08-18T14:16:18.125055+00:00 app[web.1]:   File "bot_read.py", line 13, in <module>
+2016-08-18T14:16:18.125043+00:00 app[web.1]: Traceback (most recent call last):
+2016-08-18T14:18:03.871381+00:00 heroku[slug-compiler]: Slug compilation finished
+2016-08-18T14:18:03.871375+00:00 heroku[slug-compiler]: Slug compilation started
+2016-08-18T14:18:03.611858+00:00 heroku[api]: Deploy 38725f5 by villermois.soline@gmail.com
+2016-08-18T14:18:03.611956+00:00 heroku[api]: Release v35 created by villermois.soline@gmail.com
+2016-08-18T14:18:04.232111+00:00 heroku[web.1]: State changed from crashed to starting
+2016-08-18T14:18:06.850290+00:00 heroku[web.1]: Starting process with command `python bot_read.py`
+2016-08-18T14:18:08.738808+00:00 app[web.1]: :0: UserWarning: The keyword `bot` in your user_agent may be problematic.
+2016-08-18T14:18:09.052042+00:00 app[web.1]: 
+2016-08-18T14:18:09.052023+00:00 app[web.1]: /app/.heroku/python/lib/python2.7/site-packages/praw/decorators.py:77: DeprecationWarning: reddit intends to disable password-based authentication of API clients sometime in the near future. As a result this method will be removed in a future major version of PRAW.
+2016-08-18T14:18:09.052044+00:00 app[web.1]: For more information please see:
+2016-08-18T14:18:09.052044+00:00 app[web.1]: 
+2016-08-18T14:18:09.052045+00:00 app[web.1]: * Original reddit deprecation notice: https://www.reddit.com/comments/2ujhkr/
+2016-08-18T14:18:09.052046+00:00 app[web.1]: 
+2016-08-18T14:18:09.052047+00:00 app[web.1]: * Updated delayed deprecation notice: https://www.reddit.com/comments/37e2mv/
+2016-08-18T14:18:09.052048+00:00 app[web.1]: Pass ``disable_warning=True`` to ``login`` to disable this warning.
+2016-08-18T14:18:09.052047+00:00 app[web.1]: 
+2016-08-18T14:18:09.052049+00:00 app[web.1]:   warn(msg, DeprecationWarning)
+2016-08-18T14:18:12.262081+00:00 app[web.1]:  * Running on http://0.0.0.0:30551/ (Press CTRL+C to quit)
+2016-08-18T14:18:12.610404+00:00 heroku[web.1]: State changed from starting to up
+2016-08-18T14:20:23.312322+00:00 heroku[api]: Starting process with command `python` by villermois.soline@gmail.com
+2016-08-18T14:20:26.878486+00:00 heroku[run.4068]: Awaiting client
+2016-08-18T14:20:27.098875+00:00 heroku[run.4068]: State changed from starting to up
+2016-08-18T14:20:56.915838+00:00 heroku[run.4068]: State changed from up to complete
+2016-08-18T14:20:56.882503+00:00 heroku[run.4068]: Process exited with status 128
+2016-08-18T14:20:56.879586+00:00 heroku[run.4068]: Error R13 (Attach error) -> Failed to attach to process
+2016-08-18T14:21:57.000822+00:00 heroku[api]: Release v36 created by villermois.soline@gmail.com
+2016-08-18T14:21:57.000822+00:00 heroku[api]: Deploy e743d7e by villermois.soline@gmail.com
+2016-08-18T14:21:57.278401+00:00 heroku[slug-compiler]: Slug compilation started
+2016-08-18T14:21:57.278406+00:00 heroku[slug-compiler]: Slug compilation finished
+2016-08-18T14:21:57.550076+00:00 heroku[web.1]: Restarting
+2016-08-18T14:21:57.550634+00:00 heroku[web.1]: State changed from up to starting
+2016-08-18T14:22:01.491808+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2016-08-18T14:22:02.217701+00:00 heroku[web.1]: Starting process with command `python bot_read.py`
+2016-08-18T14:22:02.512281+00:00 heroku[web.1]: Process exited with status 143
+2016-08-18T14:22:04.013837+00:00 app[web.1]: :0: UserWarning: The keyword `bot` in your user_agent may be problematic.
+2016-08-18T14:22:04.328375+00:00 app[web.1]: /app/.heroku/python/lib/python2.7/site-packages/praw/decorators.py:77: DeprecationWarning: reddit intends to disable password-based authentication of API clients sometime in the near future. As a result this method will be removed in a future major version of PRAW.
+2016-08-18T14:22:04.328391+00:00 app[web.1]: 
+2016-08-18T14:22:04.328395+00:00 app[web.1]: 
+2016-08-18T14:22:04.328393+00:00 app[web.1]: 
+2016-08-18T14:22:04.328396+00:00 app[web.1]: Pass ``disable_warning=True`` to ``login`` to disable this warning.
+2016-08-18T14:22:04.328394+00:00 app[web.1]: * Original reddit deprecation notice: https://www.reddit.com/comments/2ujhkr/
+2016-08-18T14:22:04.328392+00:00 app[web.1]: For more information please see:
+2016-08-18T14:22:04.328394+00:00 app[web.1]: 
+2016-08-18T14:22:04.328395+00:00 app[web.1]: * Updated delayed deprecation notice: https://www.reddit.com/comments/37e2mv/
+2016-08-18T14:22:04.328397+00:00 app[web.1]:   warn(msg, DeprecationWarning)
+2016-08-18T14:22:28.774107+00:00 heroku[api]: Deploy 530d394 by villermois.soline@gmail.com
+2016-08-18T14:22:28.774227+00:00 heroku[api]: Release v37 created by villermois.soline@gmail.com
+2016-08-18T14:22:28.999219+00:00 heroku[slug-compiler]: Slug compilation started
+2016-08-18T14:22:28.999224+00:00 heroku[slug-compiler]: Slug compilation finished
+2016-08-18T14:22:29.092405+00:00 heroku[web.1]: State changed from starting to down
+2016-08-18T14:23:02.425590+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch
+2016-08-18T14:23:02.425590+00:00 heroku[web.1]: Stopping process with SIGKILL
+2016-08-18T14:23:02.511948+00:00 app[web.1]:  Items: 100             Items: 200             Items: 300             Items: 396 (16.82 ips)     Items: 400             Items: 496 (12.66 ips)     Items: 500             Items: 596 (19.03 ips)     Items: 600             Items: 696 (19.02 ips)     Items: 696 (0.00 ips)     Items: 700             Items: 800             Items: 900            
+2016-08-18T14:23:02.517149+00:00 heroku[web.1]: Process exited with status 137
+2016-08-18T14:26:37.555376+00:00 heroku[api]: Scale to worker=1 by villermois.soline@gmail.com
+2016-08-18T14:26:41.026162+00:00 heroku[worker.1]: Starting process with command `python bot_read.py`
+2016-08-18T14:26:41.775499+00:00 heroku[worker.1]: State changed from starting to up
+2016-08-18T14:26:43.390592+00:00 app[worker.1]: :0: UserWarning: The keyword `bot` in your user_agent may be problematic.
+2016-08-18T14:26:43.705907+00:00 app[worker.1]: /app/.heroku/python/lib/python2.7/site-packages/praw/decorators.py:77: DeprecationWarning: reddit intends to disable password-based authentication of API clients sometime in the near future. As a result this method will be removed in a future major version of PRAW.
+2016-08-18T14:26:43.705938+00:00 app[worker.1]: 
+2016-08-18T14:26:43.705946+00:00 app[worker.1]: For more information please see:
+2016-08-18T14:26:43.705947+00:00 app[worker.1]: 
+2016-08-18T14:26:43.705975+00:00 app[worker.1]:   warn(msg, DeprecationWarning)
+2016-08-18T14:26:43.705954+00:00 app[worker.1]: 
+2016-08-18T14:26:43.705955+00:00 app[worker.1]: 
+2016-08-18T14:26:43.705955+00:00 app[worker.1]: Pass ``disable_warning=True`` to ``login`` to disable this warning.
+2016-08-18T14:26:43.705953+00:00 app[worker.1]: * Original reddit deprecation notice: https://www.reddit.com/comments/2ujhkr/
+2016-08-18T14:26:43.705954+00:00 app[worker.1]: * Updated delayed deprecation notice: https://www.reddit.com/comments/37e2mv/

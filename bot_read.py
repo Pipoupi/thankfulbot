@@ -16,17 +16,10 @@ s = ''
 authorList = []
 first = True
 
-class SavedSet(set):
-	_filename = "posts_replied_to.txt"
-
-	def load_from_file(self):
-		with open(_filename, "r") as f:
-			return set(f.read().split())
-
-	def add(self, what):
-		with open(_filename, "a") as f:
-			f.write(what + "\n")
-		return super(PostsDone, self).add(what)
+with open("posts_replied_to.txt", "r") as f:
+	posts_replied_to = f.read()
+	posts_replied_to = posts_replied_to.split("\n")
+	posts_replied_to = filter(None, posts_replied_to)
 
 
 def bot_action(c, posts_replied_to, verbose=True, respond=True):
@@ -54,6 +47,9 @@ def bot_action(c, posts_replied_to, verbose=True, respond=True):
 		print(response)
 		c.reply(response)
 		posts_replied_to.add(submission.id)
+		with open("posts_replied_to.txt", "w") as f:
+			for post_id in posts_replied_to:
+				f.write(post_id + "\n")
 
 
 def main():
