@@ -1,1 +1,1 @@
-web: python bot_read.py -p ${PORT}
+bot: python bot_read.py 
