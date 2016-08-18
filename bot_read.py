@@ -4,6 +4,7 @@
 
 import praw
 import re
+import os
 #from config_bot import * no need for heroku version
 
 r = praw.Reddit(user_agent='bot 0.1 by /u/poupipoupipoupipou')
