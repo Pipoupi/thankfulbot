@@ -1,1 +1,1 @@
-web: python bot_read.py runserver 0.0.0.0:5000
+web: python bot_read.py $PORT
