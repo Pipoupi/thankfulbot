@@ -1,1 +1,1 @@
-web: python bot_read.py 
+worker: python bot_read.py 
