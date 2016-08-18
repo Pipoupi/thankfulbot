@@ -1,1 +1,1 @@
-web: python bot_read.py
+web: python ./thankfulbot/bot_read.py
