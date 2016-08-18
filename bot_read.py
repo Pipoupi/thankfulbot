@@ -45,7 +45,7 @@ def bot_action(c, posts_replied_to, verbose=True, respond=True):
 				s += '/u/' + str(comment.author.name)
 				authorList.append(comment.author.name)
 				first = False
-		response = ' I\' m a lazy bot. Thank you ' + s
+		response = ' I\'m a lazy bot. Thank you ' + s
 		if len(authorList) > 1:
 			response += ' for your kind answers !'
 		else:
@@ -64,6 +64,4 @@ def main():
 
 
 if __name__ == '__main__':
-	port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
 	main()
