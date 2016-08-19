@@ -7,24 +7,28 @@ import re
 from config_bot import *
 
 r = praw.Reddit(user_agent='bot 0.1 by /u/poupipoupipoupipou')
-r.login(os.environ['REDDIT_USERNAME'],  os.environ['REDDIT_PASS'])
+r.login('thankfulbot',  'minjab')
 
 
 key_word = 'thankfulbot'
 s = ''
 authorList = []
 first = True
+_filename = "posts_replied_to.txt"
+
 
 class SavedSet(set):
-	_filename = "posts_replied_to.txt"
+	# _filename = "posts_replied_to.txt"
 
 	@classmethod
 	def load_from_file(cls):
+		global _filename
 		with open(_filename, "r") as f:
 			records = f.read().split()
 			return cls(records)
 
 	def add(self, what):
+		global _filename
 		with open(_filename, "a") as f:
 			f.write(what + "\n")
 		return super(PostsDone, self).add(what)
@@ -40,7 +44,9 @@ def bot_action(c, posts_replied_to, verbose=True, respond=True):
 		authorCom = str(c.author)
 		authorPost = str(c.link_author)
 		flat_comments = praw.helpers.flatten_tree(submission.comments)
+		print(flat_comments)
 		for comment in flat_comments:
+			# print(comment))
 			if comment.author.name not in authorList + [authorCom, authorPost]:
 				if not first:
 					s += ', '
@@ -52,7 +58,7 @@ def bot_action(c, posts_replied_to, verbose=True, respond=True):
 			response += ' for your kind answers !'
 		else:
 			response += ' for your kind answer !'
-		print(response)
+		# print(response)
 		c.reply(response)
 		posts_replied_to.add(submission.id)
 
