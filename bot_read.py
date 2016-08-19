@@ -4,8 +4,7 @@
 
 import praw
 import re
-import os
-#from config_bot import * no need for heroku version
+from config_bot import *
 
 r = praw.Reddit(user_agent='bot 0.1 by /u/poupipoupipoupipou')
 r.login(os.environ['REDDIT_USERNAME'],  os.environ['REDDIT_PASS'])
@@ -16,13 +15,22 @@ s = ''
 authorList = []
 first = True
 
-with open("posts_replied_to.txt", "r") as f:
-	posts_replied_to = f.read()
-	posts_replied_to = posts_replied_to.split("\n")
-	posts_replied_to = filter(None, posts_replied_to)
+class SavedSet(set):
+	_filename = "posts_replied_to.txt"
+
+	@classmethod
+	def load_from_file(cls):
+		with open(_filename, "r") as f:
+			records = f.read().split()
+			return cls(records)
+
+	def add(self, what):
+		with open(_filename, "a") as f:
+			f.write(what + "\n")
+		return super(PostsDone, self).add(what)
 
 
-def bot_action(c, verbose=True, respond=True):
+def bot_action(c, posts_replied_to, verbose=True, respond=True):
 	global first
 	global s
 	global authorList
@@ -39,24 +47,22 @@ def bot_action(c, verbose=True, respond=True):
 				s += '/u/' + str(comment.author.name)
 				authorList.append(comment.author.name)
 				first = False
-		response = ' I\'m a lazy bot. Thank you ' + s
+		response = ' I\' m a lazy bot. Thank you ' + s
 		if len(authorList) > 1:
 			response += ' for your kind answers !'
 		else:
 			response += ' for your kind answer !'
 		print(response)
 		c.reply(response)
-		posts_replied_to.append(submission.id)
-		with open("posts_replied_to.txt", "w") as f:
-			for post_id in posts_replied_to:
-				f.write(post_id + "\n")
+		posts_replied_to.add(submission.id)
 
 
 def main():
 	for c in praw.helpers.comment_stream(r, 'all'):
+		posts = SavedSet.load_from_file()
 		if re.search(key_word, c.body, re.IGNORECASE):
 			print(vars(c))
-			bot_action(c)
+			bot_action(c, posts)
 
 
 if __name__ == '__main__':
