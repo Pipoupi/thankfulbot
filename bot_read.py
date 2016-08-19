@@ -7,7 +7,7 @@ import re
 from config_bot import *
 
 r = praw.Reddit(user_agent='bot 0.1 by /u/poupipoupipoupipou')
-r.login('thankfulbot',  'minjab')
+r.login(os.environ['REDDIT_USERNAME'],  os.environ['REDDIT_PASS'])
 
 
 key_word = 'thankfulbot'
